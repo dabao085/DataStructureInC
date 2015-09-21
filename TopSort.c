@@ -8,7 +8,7 @@ void TopSort(GraphList g)
 	Queue Q;
 	int Counter = 0;
 	int V, W;
-	int indegree[MAXVEX];	//维护每个节点的入度，初始化时需要遍历整张图
+	int indegree[MAXVEX];	//维护每个节点的入度(indegree)，初始化时需要遍历整张图
 	int topNum[MAXVEX];
 	EdgeNode* p;
 
