@@ -1,31 +1,10 @@
-#ifndef _GRAPH_H
-#include <stdio.h>
-#include <stdlib.h>
+/*
+ * Author: Cheng xiang
+ * Date: 2019-2-25
+ * implement file of graph
+*/
 
-#define MAXVEX 1000
-
-typedef char VertexType;
-typedef int EdgeType;
-
-typedef struct EdgeNode
-{
-	int adjvex;
-	EdgeType weight;
-	struct EdgeNode *next;
-}EdgeNode;
-
-typedef struct VertexNode
-{
-	VertexType data;
-	EdgeNode * firstedge;
-}VertexNode, AdjList[MAXVEX];
-
-typedef struct Graph
-{
-	AdjList adjList;
-	int numVertexes, numEdges;
-}GraphList;
-
+#include "datastructureinc.h"
 
 int Locate(GraphList* g, char ch)
 {
@@ -118,6 +97,3 @@ void printGraph(GraphList *g)
 		printf("\n");
 	}
 }
-
-#endif
-
