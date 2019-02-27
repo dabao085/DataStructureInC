@@ -102,33 +102,33 @@ private:
     {
         if(t == nullptr)
             return ;
-        else if(x < t->left)
+        else if(x < t->element)
         {
             remove(x, t->left);
         }
-        else if(x > t->right)
+        else if(x > t->element)
         {
             remove(x, t->right);
         }
-        else
+        else    //find the element which will be removed
         {
-            if((t->left != nullptr) && (t->right != nullptr))
+            if((t->left != nullptr) && (t->right != nullptr))   //have both tow children(left child and right child).
             {
-                t->element = findMin(t->right)->element;
-                remove(t->element, t->right);
+                t->element = findMin(t->right)->element;        //get the min of right subtree
+                remove(t->element, t->right);                   //remove the min of right subtree
             }
             else
             {
                 BinaryNode *oldNode = t;
-                if(t->left != nullptr)            
+                if(t->left != nullptr)  //left child is avaliable.
                 {
                     t = t->left;
                 }
-                else if(t->right != nullptr)
+                else    //right child is avaliable or right child is nullptr.
                 {
                     t = t->right;
                 }
-                delete oldNode;
+                delete oldNode; //needn't make oldNode to nullptr, cause pointer "oldNode" is a tmp object, it will release after out of range.
             }
         }
     }
