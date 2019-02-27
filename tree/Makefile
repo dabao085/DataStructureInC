@@ -1,13 +1,13 @@
 TARGET = testbinarysearchtree
 OBJS = binarysearchtree.o testbinarysearchtree.o
-CFLAG = -I../include
+CFLAG = -I../include -std=c++0x
 
 all: ${OBJS}
 ${OBJS}: %.o: %.cpp
-	g++ -c ${CFLAG} $<
+	g++ -c -g ${CFLAG} $<
 
 all: ${TARGET}	
-${TARGET}: %.o
+${TARGET}: %: %.o
 	g++ -o $@ $< binarysearchtree.o
 
 clean:

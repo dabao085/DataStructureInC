@@ -4,4 +4,18 @@
  * test binary search tree
 */
 
-#include "tree.h"
+#include "binarySearchTree.h"
+using namespace std;
+
+int main()
+{
+    BinarySearchTree<int> bst;
+    bst.insert(1);
+    bst.insert(0);
+    bst.insert(2);
+
+    cout << bst.findMin() << endl;
+    cout << bst.findMax() << endl;
+
+    return 0;
+}
