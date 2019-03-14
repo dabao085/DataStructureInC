@@ -1,5 +1,5 @@
-TARGET = testBinarySearchTree
-OBJS = binarySearchTree.o testBinarySearchTree.o
+TARGET = testbinarysearchTree
+OBJS = binarysearchtree.o testbinarysearchtree.o
 CFLAG = -I../include -std=c++0x
 
 all: ${OBJS}
@@ -8,7 +8,7 @@ ${OBJS}: %.o: %.cpp
 
 all: ${TARGET}	
 ${TARGET}: %: %.o
-	g++ -o $@ $< binarySearchTree.o
+	g++ -o $@ $< binarysearchtree.o
 
 clean:
 	rm -f ${TARGET}	 *.o
